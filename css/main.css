@@ -16,11 +16,12 @@ body {
 }
 
 .container{
-	max-width: 33.3%;
-	margin: 0 auto;
+	max-width: 1200px;
+	width: 90%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-flow: row wrap;
 }
 
 h1,
@@ -31,38 +32,29 @@ h4 {
 	text-transform: uppercase;
 	font-weight: 700;
 }
-h1 {
-	font-size: 1.875em;
-}
-h2 {
-    font-size: 1.5em;
-}
-h3 {
-	font-size: 1.125em;
-}
-h4 {
-	font-size: .75em;
-}
 
 p {
 	font-size: .875;
 	line-height: 21px;
-    padding: 0 30px;
+}
+
+ul {
+    margin: 0;
 }
 
 /*The widths are in a percentage!*/
 header {
-	height: 110px;
 	border-bottom: 3px solid #77a466;
-	margin: 0 auto;
+	text-align: center;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-flow: row wrap;
 }
 
 header h1 {
-	float: left;
+	font-size: 1.875em;
 	margin: 0;
 	padding: 38px 0;
 	width: 100%; 
@@ -84,7 +76,7 @@ header nav ul li {
 	font-weight: 700;
 	font-size: .875em;
 	padding: 0 10px;
-	display: inline;
+	list-style: none;
 }
 header nav ul li a{
 	text-decoration: none;
@@ -97,6 +89,7 @@ header nav ul li a{
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-flow: row wrap;
 }
 
 .main-image img {
@@ -108,6 +101,7 @@ header nav ul li a{
 	text-align: left;
 	padding: 5px 0;
 	color: #77a466;
+	font-size: 1.125em;
 }
 .main-title p {
 	padding: 0;
@@ -150,6 +144,7 @@ footer {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-flow: row wrap;
 }
 footer span {
 	font-family: 'Wisdom Script', cursive;
@@ -160,38 +155,48 @@ footer span {
 
 
 /******MEDIA CONTENT REARRANGED****/
-.section-one h4 {
-	padding: 10px 0;
+@media all and (min-width:768px) {
+	/* Tablet styles here */
+	.bottom-section {
+	border-top: 1px solid #eee;
+	justify-content: center;
+	align-items: center;
+ 
 }
 
-.section-two {
-	border-left: 1px solid #eee;
-	border-right: 1px solid #eee;
+.section-one,
+    .section-two,
+    .section-three {
+        border-top: none;
+        flex-basis: 30%;
+    }
+
+    .section-two {
+        border-left: 1px solid #eee;
+        border-right: 1px solid #eee;
+        padding: 0 20px;
+    }
 }
 
-.section-two h4,
-.section-three h4 {
-	padding: 10px 30px;
+/* Desktop styles here */
+@media all and (min-width:1200px) {
+	header {
+		justify-content: space-between;
 }
 
-header {
-	height: 110px;
-	border-bottom: 3px solid #77a466;
-	margin: 0 auto;
+	header h1 {
+		width: 30%
+		padding: 0;
+		border-bottom: none;
+        text-align: left;
 }
 
-header h1 {
-	float: left;
-	margin: 0;
-	padding: 38px 0;
+	header nav {
+		width: 40%
 }
 
-header nav {
-	float: right;
-	padding: 46px 0;
+	header nav ul {
+		display: flex;
+        justify-content: space-between;
 }
-
-header nav ul {
-	margin: 0;
-	padding: 0;
 }
